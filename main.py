@@ -46,10 +46,6 @@ if uploaded_files:
         user_q = st.text_input("💬 Ask a question about your PDF(s):")
 
 
-
-#auto poy mou eipe na trekso tora
-
-
         if st.button("🔍 Get Answer", type="primary") and user_q:
             with st.spinner("Generating AI answer..."):
                 docs = retriever.invoke(user_q)
@@ -99,4 +95,5 @@ with st.sidebar:
     3. **Vector Store** → FAISS index (saved to disk)
     4. **Query** → Retrieve relevant chunks + Gemini answer
     """)
+
     st.caption("Uses Gemini 1.5 Pro + text-embedding-004")
